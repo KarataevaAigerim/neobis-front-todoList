@@ -1,14 +1,15 @@
 body {
     background-color: #eeeeee;
+    font-family: "Poppins", sans-serif;
 }
-.todo-app {
+.todo {
     max-width: 650px;
     margin: 0 auto;
     padding: 20px;
     border-radius: 8px;
 }
 
-.todo-app__task {
+.todo__task {
     padding: 10px;
     margin-top: 10px;
     border-radius: 5px;
@@ -16,34 +17,32 @@ body {
     align-items: center;
 }
 
-.todo-app__task--personal {
-    background-color: red;
+.todo__task--personal {
+    background-color: white;
 }
 
-.todo-app__task--business {
-    background-color: blue;
+.todo__task--business {
+    background-color: white;
 }
 
-.todo-app__checkbox {
-    margin-right: 10px;
-}
 
-.todo-app__text {
+
+.todo__text {
     flex-grow: 1;
 }
 
-.todo-app__edit, .todo-app__delete {
+.todo__edit, .todo-app__delete {
     margin-left: 10px;
     cursor: pointer;
 }
 
-.todo-app__heading{
+.todo__heading{
     font-size: 2rem;
     color: #2B2D23;
     display: inline;
 }
 
-.todo-app__input{
+.todo__input{
     border: none;
     font-size: 2rem;
     background: none;
@@ -51,7 +50,90 @@ body {
     /* width: 100%; */
 }
 
-.todo-app__input:focus{
+.todo__input:focus{
     border: none;
     outline: none;
+}
+
+.todo__subheading {
+    text-transform: uppercase;
+    color: #393a3f;
+    font-weight: 300;
+    font-size: 1.3rem;
+}
+
+.todo__comment {
+    color:#757575
+}
+
+/* styling divs around categories */
+/* .todo__category {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.todo__category--personal {
+    border: 2px solid red;
+}
+
+.todo__category--business {
+    border: 2px solid blue;
+} */
+
+
+
+/* styling radio buttons */
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    /* General styles for radio buttons */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 5px;
+    cursor: pointer;
+
+    /* Default border to ensure visibility */
+    border: 2px solid #ccc;
+    background-color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.todo__label--personal input[type="radio"] {
+    border-color: red;
+}
+
+.todo__label--personal input[type="radio"]:checked {
+    background-color: red;
+}
+
+.todo__label--business input[type="radio"] {
+    border-color: blue;
+}
+
+.todo__label--business input[type="radio"]:checked {
+    background-color: blue;
+}
+
+
+/* styling radio buttons in to do list */
+
+.todo__task--personal .todo__radio {
+    border-color: red;
+}
+
+.todo__task--personal .todo__radio:checked {
+    background-color: red;
+}
+
+.todo__task--business .todo__radio {
+    border-color: blue;
+}
+
+.todo__task--business .todo__radio:checked {
+    background-color: blue;
 }

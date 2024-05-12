@@ -5,24 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,500;0,600;1,100&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="todo-app">
-        <h1 class="todo-app__heading">What's up, </h1>
-        <input class="todo-app__input" type='text' placeholder="Name here" value="" name="title" id="title" /><br />
-
-        <h2 class="todo-app__subheading">Create a todo</h2>
+    <div class="todo">
+        <h1 class="todo__heading">What's up, </h1>
+        <input class="todo__input" type='text' placeholder="Name here" value="" />
+        <h2 class="todo__subheading">Create a todo</h2>
+        <p class="todo__comment">What's on your to do list?</p>
         <form id="todo-form">
-            <input type="text" id="task-name" placeholder="Enter a task name..." required>
-            <label>
-                <input type="radio" name="type" value="personal" checked> Personal
-            </label>
-            <label>
-                <input type="radio" name="type" value="business"> Business
-            </label>
-            <button type="submit">Create Task</button>
+            <input type="text" id="task-name" placeholder="e.g. do your homework" required>
+            <p class="todo__comment">Pick a category</p>
+            <div class="todo__category todo__category--personal">
+                <label class="todo__label--personal">
+                    <input type="radio" name="type" value="personal" > Personal
+                </label>
+            </div>
+            <div class="todo__category todo__category--business">
+                <label class="todo__label--business">
+                    <input type="radio" name="type" value="business" > Business
+                </label>
+            </div>
+            <button type="submit">Add todo</button><br>
         </form>
-        <ul id="todo-list"></ul>
+        <ul id="todo-list">TODO LIST</ul>
     </div>
     <script src="script.js"></script>
 </body>
