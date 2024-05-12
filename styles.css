@@ -1,0 +1,36 @@
+.todo-app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+}
+
+.todo-app__task {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.todo-app__task--personal {
+    background-color: red;
+}
+
+.todo-app__task--business {
+    background-color: blue;
+}
+
+.todo-app__checkbox {
+    margin-right: 10px;
+}
+
+.todo-app__text {
+    flex-grow: 1;
+}
+
+.todo-app__edit, .todo-app__delete {
+    margin-left: 10px;
+    cursor: pointer;
+}
