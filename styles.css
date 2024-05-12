@@ -30,6 +30,7 @@ a {
     padding: 0 10px;
     border-radius: 10px;
     margin-bottom: 15px;
+    border: 1px solid #ccc; 
 }
 
 #task-name:focus{
@@ -37,7 +38,7 @@ a {
 }
 
 .todo__text-input:focus {
-    outline: none; /* Removes the default outline */
+    outline: none; 
     border: none;
 }
 
@@ -84,19 +85,18 @@ a {
 }
 
 /* styling divs around categories */
-/* .todo__category {
-    padding: 10px;
+
+.todo__category {
     margin: 10px 0;
-    border-radius: 5px;
+    padding: 20px; 
+    border-radius: 10px;
+    background-color: #ffffff; 
+    border: 1px solid #ccc; 
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.todo__category--personal {
-    border: 2px solid red;
-}
-
-.todo__category--business {
-    border: 2px solid blue;
-} */
 ul {
     list-style-type: none;
     padding: 0;
@@ -111,13 +111,14 @@ ul {
 .btn-flat {
     color: white;
     width: 100%;
-    padding: 8px 24px;
+    padding: 8px 50px;
     border-radius: 10px;
     background: rgba(0, 51, 255, 0.806);
     /* transition: background 0.3s ease; */
     display: block;
     margin-top: 25px;
     text-align: center;
+    border: 1px solid #ccc; 
   }
   
   .btn-flat:hover {
