@@ -2,11 +2,17 @@ body {
     background-color: #eeeeee;
     font-family: "Poppins", sans-serif;
 }
+
+a {
+    text-decoration: none;;
+
+}
 .todo {
-    max-width: 650px;
     margin: 0 auto;
     padding: 20px;
     border-radius: 8px;
+    display: grid;
+    justify-content: center;
 }
 
 .todo__task {
@@ -15,6 +21,19 @@ body {
     border-radius: 5px;
     display: flex;
     align-items: center;
+}
+
+#task-name {
+    width: 100%;
+    height: 50px;
+    font-size: 0.9rem;
+    padding: 0 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+#task-name:focus{
+    outline: none;
 }
 
 .todo__task--personal {
@@ -26,11 +45,6 @@ body {
 }
 
 
-
-.todo__text {
-    flex-grow: 1;
-}
-
 .todo__edit, .todo-app__delete {
     margin-left: 10px;
     cursor: pointer;
@@ -39,7 +53,6 @@ body {
 .todo__heading{
     font-size: 2rem;
     color: #2B2D23;
-    display: inline;
 }
 
 .todo__input{
@@ -47,7 +60,7 @@ body {
     font-size: 2rem;
     background: none;
     color: #2B2D23;
-    /* width: 100%; */
+    width: 100%;
 }
 
 .todo__input:focus{
@@ -60,10 +73,13 @@ body {
     color: #393a3f;
     font-weight: 300;
     font-size: 1.3rem;
+    margin-bottom: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 .todo__comment {
-    color:#757575
+    color:#757575;
+    margin-top: 0;
 }
 
 /* styling divs around categories */
@@ -80,7 +96,28 @@ body {
 .todo__category--business {
     border: 2px solid blue;
 } */
+ul {
+    list-style-type: none;
+    padding: 0;
 
+}
+/* button */
+.btn-flat {
+    color: white;
+    width: 100%;
+    padding: 8px 24px;
+    border-radius: 10px;
+    background: rgba(0, 51, 255, 0.806);
+    transition: background 0.3s ease;
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+  }
+  
+  .btn-flat:hover {
+    background: rgba(0, 51, 255, 0.806);
+    color: white;
+  }
 
 
 /* styling radio buttons */
