@@ -24,34 +24,44 @@ class TodoApp {
     addTask(name, type) {
         const taskElement = document.createElement('li');
         taskElement.className = `todo__task todo__task--${type}`;
+        const uniqueId = `radio-${name.replace(/\s+/g, '-')}`; // Replace spaces with dashes for a valid ID
         taskElement.innerHTML = `
-            <input type="radio" class="todo__radio" name="radio-${name}">
-            <span class="todo__text">${name}</span>
+            <input type="radio" class="todo__radio" id="${uniqueId}" name="task-radio">
+            <label for="${uniqueId}" class="todo__text">${name}</label>
             <input type="text" class="todo__text-input" value="${name}" style="display: none;">
             <span class="todo__edit">Edit</span>
             <span class="todo__delete">Delete</span>
         `;
         this.taskList.appendChild(taskElement);
-
-        // Add event listeners for delete, edit, and toggle completion
-        taskElement.querySelector('.todo__delete').addEventListener('click', () => taskElement.remove());
-
-        const editBtn = taskElement.querySelector('.todo__edit');
-        const textInput = taskElement.querySelector('.todo__text-input');
+    
+        // Toggle completion using radio button
+        const radioButton = taskElement.querySelector('.todo__radio');
         const textSpan = taskElement.querySelector('.todo__text');
-
-        editBtn.addEventListener('click', () => {
-            textSpan.style.display = 'none';
-            textInput.style.display = '';
-            textInput.focus();
-        });
-
-        textInput.addEventListener('blur', () => {
-            textSpan.textContent = textInput.value;
-            textSpan.style.display = '';
-            textInput.style.display = 'none';
+        
+        radioButton.addEventListener('change', (e) => {
+            // Check if the radio is already marked as completed
+            if (radioButton.classList.contains('completed')) {
+                textSpan.style.textDecoration = 'none';
+                radioButton.classList.remove('completed');
+            } else {
+                // Mark as completed
+                const allRadios = document.querySelectorAll('.todo__radio');
+                allRadios.forEach(radio => {
+                    radio.classList.remove('completed'); // Remove completed class from all radios
+                    radio.parentNode.querySelector('.todo__text').style.textDecoration = 'none'; // Remove line-through
+                });
+                textSpan.style.textDecoration = 'line-through';
+                radioButton.classList.add('completed');
+            }
         });
     }
 }
 
 new TodoApp();
+
+
+
+
+
+
+
