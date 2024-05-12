@@ -1,8 +1,10 @@
+body {
+    background-color: #eeeeee;
+}
 .todo-app {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
     padding: 20px;
-    background: #f4f4f4;
     border-radius: 8px;
 }
 
@@ -33,4 +35,23 @@
 .todo-app__edit, .todo-app__delete {
     margin-left: 10px;
     cursor: pointer;
+}
+
+.todo-app__heading{
+    font-size: 2rem;
+    color: #2B2D23;
+    display: inline;
+}
+
+.todo-app__input{
+    border: none;
+    font-size: 2rem;
+    background: none;
+    color: #2B2D23;
+    /* width: 100%; */
+}
+
+.todo-app__input:focus{
+    border: none;
+    outline: none;
 }
