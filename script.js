@@ -11,12 +11,12 @@ class TodoApp {
         this.form.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            // Check if a task type is selected and the task name input is not empty
+            
             const typeInput = document.querySelector('input[name="type"]:checked');
             if (typeInput && this.taskNameInput.value.trim() !== '') {
                 this.addTask(this.taskNameInput.value, typeInput.value);
-                typeInput.checked = false; // Uncheck the selected task type
-                this.taskNameInput.value = ''; // Clear the task name input
+                typeInput.checked = false; 
+                this.taskNameInput.value = ''; 
             }
         });
     }
@@ -25,7 +25,7 @@ class TodoApp {
     addTask(name, type) {
         const taskElement = document.createElement('li');
         taskElement.className = `todo__task todo__task--${type}`;
-        const uniqueId = `radio-${name.replace(/\s+/g, '-')}`; // Replace spaces with dashes for a valid ID
+        const uniqueId = `radio-${name.replace(/\s+/g, '-')}`;
         taskElement.innerHTML = `
             <input type="radio" class="todo__radio" id="${uniqueId}" name="task-radio">
             <label for="${uniqueId}" class="todo__text">${name}</label>
@@ -42,13 +42,13 @@ class TodoApp {
             textSpan.style.textDecoration = radioButton.checked ? 'line-through' : 'none';
         });
     
-        // Attach Delete functionality
+        // Attach Delete function
         const deleteBtn = taskElement.querySelector('.todo__delete');
         deleteBtn.addEventListener('click', () => {
             taskElement.remove();
         });
     
-        // Attach Edit functionality
+        // Attach Edit function
         const editBtn = taskElement.querySelector('.todo__edit');
         const textInput = taskElement.querySelector('.todo__text-input');
         editBtn.addEventListener('click', () => {
