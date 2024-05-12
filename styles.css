@@ -24,7 +24,7 @@ a {
 }
 
 #task-name {
-    width: 100%;
+    width: 93%;
     height: 50px;
     font-size: 0.9rem;
     padding: 0 10px;
@@ -114,7 +114,7 @@ ul {
     padding: 8px 50px;
     border-radius: 10px;
     background: rgba(0, 51, 255, 0.806);
-    /* transition: background 0.3s ease; */
+    transition: background 0.3s ease;
     display: block;
     margin-top: 25px;
     text-align: center;
