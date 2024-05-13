@@ -7,6 +7,19 @@ a {
     text-decoration: none;;
 
 }
+
+:root {
+    --input-width: 100%; /* Example width, you can set in px or % based on design */
+}
+
+#task-name, .btn-flat, .todo__category--boxes, input[type="text"] {
+    width: var(--input-width);
+}
+
+#task-name, .btn-flat, .todo__category--boxes, input[type="text"] {
+    box-sizing: border-box; /* Includes padding and border in the element's total width */
+}
+
 .todo {
     margin: 0 auto;
     padding: 20px;
@@ -15,42 +28,9 @@ a {
     justify-content: center;
 }
 
-.todo__task {
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
+.todo__heading--greeting {
+    display: -webkit-box;
 }
-
-#task-name {
-    width: 93%;
-    height: 50px;
-    font-size: 0.9rem;
-    padding: 0 10px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc; 
-}
-
-#task-name:focus{
-    outline: none;
-}
-
-.todo__text-input:focus {
-    outline: none; 
-    border: none;
-}
-
-.todo__task--personal {
-    background-color: white;
-}
-
-.todo__task--business {
-    background-color: white;
-}
-
-
 
 .todo__heading{
     font-size: 2rem;
@@ -62,13 +42,43 @@ a {
     font-size: 2rem;
     background: none;
     color: #2B2D23;
-    width: 100%;
+    margin-top: 25px;
 }
 
 .todo__input:focus{
     border: none;
     outline: none;
 }
+.todo__task {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#task-name {
+    height: 50px;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; 
+    font-family: 'Poppins', sans-serif;
+}
+
+#task-name:focus{
+    outline: none;
+}
+
+.todo__task--personal {
+    background-color: white;
+}
+
+.todo__task--business {
+    background-color: white;
+}
+
 
 .todo__subheading {
     text-transform: uppercase;
@@ -86,8 +96,8 @@ a {
 
 /* styling divs around categories */
 
-.todo__category {
-    margin: 10px 0;
+/* .todo__category {
+    margin: 10px;
     padding: 20px; 
     border-radius: 10px;
     background-color: #ffffff; 
@@ -95,6 +105,15 @@ a {
     cursor: pointer;
     transition: box-shadow 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 180px;
+    height: 50px;
+} */
+
+.todo__category--boxes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 ul {
@@ -104,13 +123,83 @@ ul {
 
 .todo-text {
     padding-left: 10px;
+    margin-right: 10px ;
+}
+
+.todo__text-input:focus {
+    outline: none; 
+    border: none;
+}
+
+/* Style adjustments for the category containers */
+.todo__category {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    margin: 10px;
+    padding: 20px; 
+    border-radius: 10px;
+    background-color: #ffffff; 
+    border: 1px solid #ccc; 
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 200px;  /* Adjust or make responsive as needed */
+    height: 50px;
+}
+
+/* Ensuring labels are flex containers to center text next to radio button */
+.todo__label--personal, .todo__label--business {
+    /* display: flex; */
+    align-items: center; /* Align label text with the radio button vertically */
+    cursor: pointer;
+}
+
+/* Remove default padding on labels to prevent alignment issues */
+.todo__label--personal, .todo__label--business {
+    margin: 0;
+    padding: 0;
 }
 
 
-/* button */
+
+
+/* Styling for radio buttons */
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* margin-right: 10px; Space between radio and label text */
+    cursor: pointer;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Specific styles for personal and business categories */
+.todo__label--personal input[type="radio"] {
+    border-color: red;
+}
+
+.todo__label--personal input[type="radio"]:checked {
+    background-color: red;
+}
+
+.todo__label--business input[type="radio"] {
+    border-color: blue;
+}
+
+.todo__label--business input[type="radio"]:checked {
+    background-color: blue;
+}
+
+
+/* buttons */
 .btn-flat {
     color: white;
-    width: 100%;
     padding: 8px 50px;
     border-radius: 10px;
     background: rgba(0, 51, 255, 0.806);
@@ -118,12 +207,16 @@ ul {
     display: block;
     margin-top: 25px;
     text-align: center;
-    border: 1px solid #ccc; 
+    border: 1px solid #ccc;
+    height: 50px;
+    font-size: 16px;
   }
   
   .btn-flat:hover {
     background: rgba(0, 51, 255, 0.806);
     color: white;
+    cursor: pointer;
+
   }
 
   .todo__edit {
@@ -162,7 +255,7 @@ input[type="radio"] {
     height: 20px;
     border-radius: 50%;
     vertical-align: middle;
-    margin-right: 5px;
+    /* margin-right: 5px; */
     cursor: pointer;
 
     /* Default border to ensure visibility */
