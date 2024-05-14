@@ -141,7 +141,6 @@ ul {
     border-radius: 10px;
     background-color: #ffffff; 
     border: 1px solid #ccc; 
-    cursor: pointer;
     transition: box-shadow 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     width: 200px;  /* Adjust or make responsive as needed */
