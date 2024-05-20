@@ -55,6 +55,7 @@ a {
     border-radius: 10px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 #task-name {
@@ -96,18 +97,6 @@ a {
 
 /* styling divs around categories */
 
-/* .todo__category {
-    margin: 10px;
-    padding: 20px; 
-    border-radius: 10px;
-    background-color: #ffffff; 
-    border: 1px solid #ccc; 
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: 180px;
-    height: 50px;
-} */
 
 .todo__category--boxes{
     display: flex;
@@ -136,7 +125,6 @@ ul {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center;    /* Center vertically */
-    margin: 10px;
     padding: 20px; 
     border-radius: 10px;
     background-color: #ffffff; 
@@ -224,8 +212,7 @@ input[type="radio"] {
     background: pink;
     font-size: 1rem;
     padding: 4px 10px;
-    margin-right: 5px;
-    margin-left: 10px;
+    margin-left: 185px;
   }
 
   .todo__delete {
@@ -237,7 +224,7 @@ input[type="radio"] {
     margin-right: 5px;
   }
 
-  .todo__edit, .todo__delete {
+   .todo__delete {
     margin-left: 10px;
     cursor: pointer;
 }
